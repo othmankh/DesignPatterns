@@ -8,6 +8,5 @@ public class Main {
         Thread.sleep(4000);
         Database database2 = Database.getInstance();
         database2.printDate();
-
     }
 }
