@@ -1,13 +1,13 @@
 import Models.Box;
 import Models.Item;
+import Models.Order;
 import Models.Product;
 
 public class Main {
     public static void main(String[] args) {
-        Item bigBox = new Box();
+
 
         Item smallBox = new Box();
-
 
         Item productA = new Product(10);
         Item productB = new Product(5);
@@ -19,6 +19,7 @@ public class Main {
         ((Box) smallBox).addItem(productC);
         ((Box) smallBox).addItem(productD);
 
+        Item bigBox = new Box();
         ((Box) bigBox).addItem(smallBox);
 
         Item productE = new Product(400);
@@ -27,9 +28,13 @@ public class Main {
         ((Box) bigBox).addItem(productE);
         ((Box) bigBox).addItem(productF);
 
-        double total = bigBox.getTotal();
+        Order order = new Order();
+        order.addItem(bigBox);
+        order.addItem(bigBox);
+        order.addItem(smallBox);
+
+        double total = order.getTotal();
 
         System.out.println("The total is: " + total);
-
     }
 }
