@@ -1,6 +1,7 @@
 package Decorators;
 
 import Models.BaseOrder;
+
 /* Add additional 10% discount on preoder for premium Users */
 public class PremiumOrder extends OrderDecorator {
 
@@ -14,7 +15,7 @@ public class PremiumOrder extends OrderDecorator {
     public double getTotal() {
         System.out.println("Getting total for premimum");
         double total = super.getTotal();
-        return premiumDiscountRate* total;
+        return premiumDiscountRate * total;
     }
 
 }
